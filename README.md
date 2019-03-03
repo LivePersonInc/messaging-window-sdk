@@ -42,9 +42,9 @@ windowKit.connect();
 | Method | Parameters | Description |
 | --- | --- | --- |
 | [connect](#connecting-to-liveengage) | - | Connects the library to LiveEngage |
-| `[sendMessage](#sendmessage)` | message | Sends the specified text to the conversation. |
+| [sendMessage](#sendmessage) | message | Sends the specified text to the conversation. |
 | `sendReadState` | state, ids | Sends the status of read or accept for a specified incoming message. The states are READ or ACCEPT. You can also use `windowKit.readStates.read` or `windowKit.readStates.accept` |
-| `[sendChatState](sendchatstate)` | state | Sends the specified chat state to the conversation, values of COMPOSING and PAUSE are accepted. You can use `windowKit.chatStates.composing` or `windowKit.chatStates.accept` |
+| [sendChatState](sendchatstate) | state | Sends the specified chat state to the conversation, values of COMPOSING and PAUSE are accepted. You can use `windowKit.chatStates.composing` or `windowKit.chatStates.accept` |
 
 
 ### sendMessage
@@ -102,7 +102,7 @@ In this very simple use case for the SDK, we accomplish three things:
 
 * Then, we also use the `onAgentRichContentEvent` to listen for agent rich content events, since, in this use case, the agent is a bot and will be utilizing multiple choices questions as menus.
 
-* Lastly, we listen for user selections on the different structured content items presented by the agent. We grab the text of those items and send them back to the agent using the `sendMessage` method. In LiveEngage, we've configured the bot to listen for these textual responses and trigger the appropriate menu (upon which the bot sends a rich content message, grabbed by the method used above). We also append user selections to the HTML, to create a conversation type flow. 
+* Lastly, we listen for user selections on the different structured content items presented by the agent. We grab the text of those items and send them back to the agent using the `sendMessage` method. In LiveEngage, we've configured the bot to listen for these textual responses and trigger the appropriate menu (upon which the bot sends a rich content message, grabbed by the method used above). We also append user selections to the HTML, to create a conversation type flow.
 
 **Note**: in a more complex example, we'd use a callback to render the text to the HTMl instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM.
 
