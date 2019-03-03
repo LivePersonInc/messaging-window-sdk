@@ -35,6 +35,25 @@ var windowKit = new windowKit({
 windowKit.connect();
 ```
 
+## Available Methods
+
+### Library Methods
+
+| Method | Parameters | Description |
+| --- | --- | --- |
+| [connect](#connecting-to-liveengage) | - | Connects the library to LiveEngage |
+| `sendMessage` | message | Sends the specified text to the conversation. |
+| `sendReadState` | state, ids | Sends the status of read or accept for a specified incoming message. The states are READ or ACCEPT. You can also use `windowKit.readStates.read` or `windowKit.readStates.accept` |
+| `sendChatState` | state | Sends the specified chat state to the conversation, values of COMPOSING and PAUSE are accepted. You can use `windowKit.chatStates.composing` or `windowKit.chatStates.accept` |
+
+
+### Event Callbacks
+
+| Event | Arguments | Description |
+| --- | --- | --- |
+| `onTextReceived` | text, change_details | Event is triggered when a text-only message is received. |
+| `onReceived` | change_details | Event triggered on all messages (sent or received). |
+
 ### onAgentTextEvent
 
 This callback will listen to agent text events (plain text messages) and pass their content via the `text` parameter. You will need to grab that `text` and append it to an element on your page in order to display it.
@@ -61,22 +80,3 @@ This callback sends the current state of the conversation. Useful for when you'd
 ```javascript
 windowKit.sendChatState(windowKit.chatStates.composing);
 ```
-
-## Available Methods
-
-### Library Methods
-
-| Method | Parameters | Description |
-| --- | --- | --- |
-| `connect` | - | Connects the library to LiveEngage |
-| `sendMessage` | message | Sends the specified text to the conversation. |
-| `sendReadState` | state, ids | Sends the status of read or accept for a specified incoming message. The states are READ or ACCEPT. You can also use `windowKit.readStates.read` or `windowKit.readStates.accept` |
-| `sendChatState` | state | Sends the specified chat state to the conversation, values of COMPOSING and PAUSE are accepted. You can use `windowKit.chatStates.composing` or `windowKit.chatStates.accept` |
-
-
-### Event Callbacks
-
-| Event | Arguments | Description |
-| --- | --- | --- |
-| `onTextReceived` | text, change_details | Event is triggered when a text-only message is received. |
-| `onReceived` | change_details | Event triggered on all messages (sent or received). |
