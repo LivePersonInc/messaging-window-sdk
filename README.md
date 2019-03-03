@@ -67,8 +67,8 @@ windowKit.sendChatState(windowKit.chatStates.composing);
 
 | Event | Arguments | Description |
 | --- | --- | --- |
-| [onAgentTextEvent](#onAgentTextEvent) | text | Event is triggered when the agent sends a plain text message |
-| [onAgentRichContentEvent](#onAgentRichContentEvent) | content | Event is triggered when the agent sends a structured content message |
+| [onAgentTextEvent](#onagenttextevent) | text | Event is triggered when the agent sends a plain text message |
+| [onAgentRichContentEvent](#onagentrichcontentevent) | content | Event is triggered when the agent sends a structured content message |
 | `onTextReceived` | text, change_details | Event is triggered when a text-only message is received. |
 | `onReceived` | change_details | Event triggered on all messages (sent or received). |
 
