@@ -10,7 +10,7 @@ This library requires only an active LiveEngage account #.
 
 ## Quick Start
 
-### Include the Attached JavaScript File in Your <head>
+### Include the Attached JavaScript File in Your `<head>``
 
 ```html
 <head>
