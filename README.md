@@ -18,7 +18,7 @@ This library requires only an active LiveEngage account #.
 	...
 ```
 
-Initialize the library by instantiating an object with the necessary options (see below). Call the `connect()` method to connect to LiveEngage **first** (if you don't, some of the callbacks won't be available when you run them and an error will be thrown). Then, handle various LiveEngage actions and events by using the custom callbacks as listed below.
+Initialize the library by instantiating an object with the necessary options (see below). Call the `connect()` method to connect to LiveEngage **first** (if you don't, some of the callbacks won't be available when you run them and an error will be thrown). Then, handle various LiveEngage actions and events by using the custom callbacks as listed below (for example, when an agent sends a message to the visitor, this message will need to be displayed on the screen).
 
 ### Initializing the Library
 
@@ -49,7 +49,7 @@ windowKit.connect();
 
 ### sendMessage
 
-This call back takes a string passed to it and sends it to LiveEngage and the agent handling the conversation. In the example below, we pass a simple, hardcoded string but you will probably need to write some code to grab the user's input from wherever they're typing it (like an `input` element for example).
+This call back takes a string passed to it and sends it to LiveEngage and the agent handling the conversation. In the example below, we pass a simple, hardcoded string but you will probably need to write some code to dynamically grab the user's input from wherever they're typing it (like an `input` element for example). See the sample code below for an example on how to achieve this.
 
 ```javascript
 windowKit.sendMessage('Hello World!');
@@ -154,3 +154,7 @@ windowKit.onAgentRichContentEvent(function(content) {
 	});
 });
 ```
+
+### Licensing
+
+All usage of the contents, documentation or code found in this repository is subject to the [LivePerson API Terms of Use](https://www.liveperson.com/policies/apitou). Please use the link above to read them carefully before utilizing the site.
