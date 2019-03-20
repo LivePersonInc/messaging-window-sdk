@@ -103,7 +103,6 @@ This callback is triggered when the agent starts or stops typing. The different 
 windowKit.onAgentChatState(function (state) {
 	if (state == 'COMPOSING') {
 		//show your agent is typing element
-
 } else {
 	//agent has stopped typing so
 	//hide your agent is typing element
