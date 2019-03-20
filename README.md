@@ -69,6 +69,7 @@ windowKit.sendChatState(windowKit.chatStates.composing);
 | --- | --- | --- |
 | [onAgentTextEvent](#onagenttextevent) | text | Event is triggered when the agent sends a plain text message |
 | [onAgentRichContentEvent](#onagentrichcontentevent) | content | Event is triggered when the agent sends a structured content message |
+| [onAgentChatState](#onagentchatstate) | state | Event is triggerd whenever the agent transitions from one state to another, i.e starts or stops typing |
 | `onTextReceived` | text, change_details | Event is triggered when a text-only message is received. |
 | `onReceived` | change_details | Event triggered on all messages (sent or received). |
 
@@ -94,6 +95,21 @@ windowKit.onAgentRichContentEvent(function(content) {
 });
 ```
 
+### onAgentChatState
+
+This callback is triggered when the agent starts or stops typing. The different states are represented by 'composing' (agent is typing) and 'pause' (agent has stopped typing). By listening to the parameter passed by this callback, you can write code to display or hide typing indicators.
+
+```javascript
+windowKit.onAgentChatState(function (state) {
+	if (state == 'COMPOSING') {
+		//show your agent is typing element
+	//agent has stopped typing
+} else {
+	//hide your agent is typing element
+}
+});
+```
+
 ### Sample code
 
 In this very simple use case for the SDK, we accomplish three things:
@@ -104,7 +120,7 @@ In this very simple use case for the SDK, we accomplish three things:
 
 * Lastly, we listen for user selections on the different structured content items presented by the agent. We grab the text of those items and send them back to the agent using the `sendMessage` method. In LiveEngage, we've configured the bot to listen for these textual responses and trigger the appropriate menu (upon which the bot sends a rich content message, grabbed by the method used above). We also append user selections to the HTML, to create a conversation type flow.
 
-**Note**: in a more complex example, we'd use a callback to render the text to the HTMl instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM.
+**Note**: in a more complex example, we'd use a callback to render the text to the HTML instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM.
 
 ```javascript
 var windowKit = new windowKit({
