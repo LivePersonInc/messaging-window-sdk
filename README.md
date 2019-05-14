@@ -137,7 +137,7 @@ In this very simple use case for the SDK, we accomplish three things:
 
 * We don't allow the user in this usecase to type back questions or answers to the bot. They can only use the structured content options given to them. If we wanted to allow free text, we would add code to grab the user's input and send it to the conversation dynamically.
 
-**Note**: in a more complex example, we'd use a callback to render the text to the HTML instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM.
+**Note**: in a more complex example, we'd use a callback to render the text to the HTML instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM. You can [check out LivePerson's Knowledge Center](knowledge.liveperson.com) for a more in-depth example of how to use this SDK to build a bot experience.
 
 ```javascript
 var windowKit = new windowKit({
