@@ -8,6 +8,13 @@ This Messaging Window SDK for the LiveEngage Messaging Window API will make buil
 
 This library requires only an active LiveEngage account #.
 
+**Table of contents**
+
+[Quick Start](#quick-start)
+[Available Methods](#available-methods)
+[Event Callbacks](#event-callbacks)
+[Sample Code](#sample-code)
+
 ## Quick Start
 
 ### Include the Attached JavaScript File
@@ -41,7 +48,7 @@ windowKit.connect();
 
 ## Available Methods
 
-Once you have connected to LiveEngage, you are set to receive and send messages to the conversation. However, you will need to handle various LiveEngage actions and events by using the custom methods callbacks as listed below (for example, when an agent sends a message to the visitor, this message will need to be displayed on the screen, a method for the user to send a message back needs to be developed and so on).
+Once you have connected to LiveEngage, you are set to receive and send messages to the conversation. However, you will need to handle various LiveEngage actions and events by using the custom methods callbacks as listed below (for example, when an agent sends a message to the visitor, this message will need to be displayed on the screen, an interface for the user to send a message back needs to be developed and so on).
 
 ### Library Methods
 
@@ -69,7 +76,9 @@ This callback sends the current state of the conversation. Useful for when you'd
 windowKit.sendChatState(windowKit.chatStates.composing);
 ```
 
-### Event Callbacks
+## Event Callbacks
+
+These event callbacks will be fired whenever their corresponding event occurs within the UMS framework. You can use these events to dynamically handle parts of the conversation, e.g. display a typing indicator when the Agent Chat State changes.
 
 | Event | Arguments | Description |
 | --- | --- | --- |
@@ -116,7 +125,7 @@ windowKit.onAgentChatState(function (state) {
 });
 ```
 
-### Sample code
+## Sample code
 
 In this very simple use case for the SDK, we accomplish three things:
 
