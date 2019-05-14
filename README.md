@@ -4,7 +4,7 @@ A JavaScript wrapper for the LiveEngage Messaging Window API.
 
 ## Introduction
 
-This Messaging Window SDK for the LiveEngage Messaging Window API will make building custom messaging windows and javascript applications efficient and stable. The SDK does a lot of the work of connecting to UMS, subscribing to notifications, and managing the conversation for you.
+This Messaging Window SDK for the LiveEngage Messaging Window API will make building custom messaging windows and javascript applications efficient and stable. The SDK does a lot of the work of connecting to UMS, subscribing to notifications, and managing the conversation for you. It was developed by Robert Lester. The documentation is maintained by Eden Kupermintz.
 
 This library requires only an active LiveEngage account #.
 
