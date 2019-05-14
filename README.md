@@ -10,10 +10,10 @@ This library requires only an active LiveEngage account #.
 
 **Table of contents**
 
-[Quick Start](#quick-start)
-[Available Methods](#available-methods)
-[Event Callbacks](#event-callbacks)
-[Sample Code](#sample-code)
+[Quick Start](#quick-start)<br>
+[Available Methods](#available-methods)<br>
+[Event Callbacks](#event-callbacks)<br>
+[Sample Code](#sample-code)<br>
 
 ## Quick Start
 
