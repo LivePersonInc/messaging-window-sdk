@@ -1,5 +1,3 @@
-/* minifyOnSave, filenamePattern: ../dist/$1.min.$2 */
-
 /*
  * LivePerson Messaging Window JavaScript SDK.
  *
@@ -7,7 +5,7 @@
  *
  * Use this SDK to build a custom messaging window in a web application or website.
  *
- */
+*/
 
 function windowKit(options) {
 
