@@ -19,11 +19,11 @@ This library requires only an active LiveEngage account #.
 
 ### Include the Attached JavaScript File
 
-Download the message-window.min.js file from this repository and include it in your project.
+Download the `message-window.min.js` file from this repository and include it in your project (a beautified version of this file is also included in this repository for your convenience).
 
 ```html
 <head>
-	<script src="js/messaging-window.min.js" type="text/javascript"></script>
+	<script src="messaging-window.min.js" type="text/javascript"></script>
 	...
 ```
 
