@@ -4,7 +4,9 @@ A JavaScript wrapper for the LiveEngage Messaging Window API.
 
 ## Introduction
 
-This Messaging Window SDK for the LiveEngage Messaging Window API will make building custom messaging windows and javascript applications efficient and stable. The SDK does a lot of the work of connecting to UMS, subscribing to notifications, and managing the conversation for you. It was developed by Robert Lester. The documentation is maintained by Eden Kupermintz.
+This Messaging Window SDK for the LiveEngage [Messaging Window API](https://developers.liveperson.com/messaging-window-api-overview.html) will make building custom messaging windows and JavaScript applications efficient and stable. The SDK does a lot of the work of connecting to LivePerson's messaging servers, subscribing to notifications, and managing the conversation for you. It was developed by Robert Lester. The documentation is maintained by Eden Kupermintz.
+
+### Prerequisites
 
 This library requires only an active LiveEngage account #.
 
@@ -33,7 +35,7 @@ Initialize the library by instantiating an object with the necessary options (se
 
 ```javascript
 var windowKit = new windowKit({
-	account: 12341234
+	account: <your LivePerson account number here>
 	//skillId: 12341234 - optional skill ID
 });
 ```
@@ -48,7 +50,7 @@ windowKit.connect();
 
 ## Available Methods
 
-Once you have connected to LiveEngage, you are set to receive and send messages to the conversation. However, you will need to handle various LiveEngage actions and events by using the custom methods callbacks as listed below (for example, when an agent sends a message to the visitor, this message will need to be displayed on the screen, an interface for the user to send a message back needs to be developed and so on).
+Once you have connected to LiveEngage, you are set to receive and send messages to the conversation. However, you will need to handle various standard actions and events by using the custom methods and callbacks as listed below (for example, when an agent sends a message to the visitor, this message will need to be displayed on the screen, an interface for the user to send a message back needs to be developed and so on).
 
 ### Library Methods
 
@@ -137,11 +139,11 @@ In this very simple use case for the SDK, we accomplish three things:
 
 * We don't allow the user in this usecase to type back questions or answers to the bot. They can only use the structured content options given to them. If we wanted to allow free text, we would add code to grab the user's input and send it to the conversation dynamically.
 
-**Note**: in a more complex example, we'd use a callback to render the text to the HTML instead of hard coding it directly as we do here. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM. You can [check out LivePerson's Knowledge Center](knowledge.liveperson.com) for a more in-depth example of how to use this SDK to build a bot experience.
+**Note**: in a more complex example, we'd use a callback to render the text to the HTML instead of hard coding it directly as we do here. That is, we'd send the text to LiveEngage using a callback then listen to the event in LiveEngage. Only when the message is received in LiveEngage would we then grab its contents and append them to the DOM. If you render it directly as here, the text messages won't be "saved" as part of the LiveEngage conversation and won't appear when the user refreshes their window, for example, since they were simply hardcoded into the DOM. You can [check out LivePerson's Knowledge Center](https://knowledge.liveperson.com) for a more in-depth example of how this SDK was used to build a complex bot experience (the website's homepage is a bot built using this SDK by Eden Kupermintz).
 
 ```javascript
 var windowKit = new windowKit({
-	account: <your account here>
+	account: <your LivePerson account number here>
 	//skillId: 12341234 - optional skill ID
 });
 
