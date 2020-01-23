@@ -293,9 +293,7 @@ function windowKit(options) {
 
     this.socketOpened = function(socket) {
         socket.registerRequests(_this.options.apiRequestTypes);
-        var convBody = _this.options.skillId ? {
-			skillId: _this.options.skillId
-		} : {};
+        var convBody = _this.createConvBody();
         socket.initConnection({},this.initStack);
         setInterval(function() {
             socket.getClock();
@@ -448,6 +446,16 @@ function windowKit(options) {
         _this.callBackStack[key].forEach(function(callback) {
             (callback)(a[1] || null, a[2] || null, a[3] || null);
         });
+    };
+
+    this.createConvBody = function() {
+        var convBody = {};
+        if (_this.options.campaignId && _this.options.engagementId) {
+            convBody = { campaignInfo: { campaignId: _this.options.campaignId, engagementId: _this.options.engagementId }};
+        } else if(_this.options.skillId) {
+            convBody = { skillId: _this.options.skillId };
+        }
+        return convBody;
     };
 
     (function(instance) {

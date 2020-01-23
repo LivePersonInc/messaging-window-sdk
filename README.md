@@ -35,8 +35,10 @@ Initialize the library by instantiating an object with the necessary options (se
 
 ```javascript
 var windowKit = new windowKit({
-	account: <your LivePerson account number here>
-	//skillId: 12341234 - optional skill ID
+	account: <your LivePerson account number here>,
+	campaignId: 12341234,
+	engagementId: 12341234,
+	//skillId: 12341234 - or optional skill ID
 });
 ```
 
