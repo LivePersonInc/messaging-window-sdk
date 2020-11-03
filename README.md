@@ -2,6 +2,8 @@
 
 A JavaScript wrapper for the LiveEngage Messaging Window API.
 
+**Please note**: since the capabilities for customizing the LP window have been enhanced in the recent two years, this SDK is no longer maintained. You may still use it but it will not be updated and we are not officialy supporting it. [See the documentation on the Window Customization API](https://developers.liveperson.com/window-customization-api-overview.html) for more information on how to achieve use cases that previously required this SDK.
+
 ## Introduction
 
 This Messaging Window SDK for the LiveEngage [Messaging Window API](https://developers.liveperson.com/messaging-window-api-overview.html) will make building custom messaging windows and JavaScript applications efficient and stable. The SDK does a lot of the work of connecting to LivePerson's messaging servers, subscribing to notifications, and managing the conversation for you. It was developed by Robert Lester. The documentation is maintained by Eden Kupermintz.
